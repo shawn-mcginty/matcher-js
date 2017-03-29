@@ -17,7 +17,7 @@ regexUtils.createRegexFromPattern(pattern)
 		readline.createInterface({
 			input: process.stdin,
 		}).on('line', (line) => {
-			if (matcher.test(line)) {
+			if (new RegExp(matcher.toString()).test(line)) {
 				process.stdout.write(`${line}\n`);
 			}
 		});
